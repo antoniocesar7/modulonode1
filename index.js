@@ -4,7 +4,7 @@ const server = express();
 
 const cursos = [
     'Node JS',
-    'JavaScript',
+    'Java Script',
     'React Native',
 ];
 
