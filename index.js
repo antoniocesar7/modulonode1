@@ -1,36 +1,16 @@
 const express = require ('express');
-//console.log(express);
 
 const server = express();
 
+const cursos = [
+    'Node JS',
+    'JavaScript',
+    'React Native',
+];
 
-
-//Request Body = {nome:'Nodejs',tipo:'Backend'}
- 
-
-//localhost:3000/curso
-//Query params = ?nome=NodeJS
-/*
-server.get('/curso', (req,res) => {
-    const nome = req.query.nome;
-    const aluno = 'Antonio';
-
-    return  res.json({
-        curso:`Aprendendo ${nome}`,
-        aluno:`Aluno ${aluno}`,
-        
-    })
-});*/
-
-
-//Route params = /curso/2
-server.get('/curso/:id', (req,res) => {
-    const id = req.params.id;
-    
-
-    return  res.json({
-        curso:`Id do curso: ${id}`,
-       
-    })
+server.get('/curso/:index', (req,res) => {
+    const {index} = req.params;
+    return  res.json(cursos[index]);
 });
+
 server.listen(3000);
